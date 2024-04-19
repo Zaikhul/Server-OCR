@@ -1,0 +1,13 @@
+{
+  "extends": "@tsconfig/node21/tsconfig.json",
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "types": ["express"],
+    "allowJs": true,
+    "checkJs": true,
+    "outDir": "./dist",
+    "rootDirs": ["./src"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
