@@ -1,8 +1,23 @@
-import express, { Express, Request, Response, Application } from "express";
+import express, { Application } from "express";
+import routes from "./routes/ocr.route";
 
-function Apps() {
-  const App: Application = express();
+class App {
+  public app: Application;
 
-  return App;
+  constructor() {
+    this.app = express();
+    this.config();
+    this.routes();
+  }
+
+  private config(): void {
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: false }));
+  }
+
+  private routes(): void {
+    this.app.use("/", routes);
+  }
 }
-export default Apps;
+
+export default App;
